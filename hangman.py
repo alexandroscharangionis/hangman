@@ -1,7 +1,7 @@
 from random import choice
 from hangman_art import hangman_logo, stages
+from hangman_words import word_list
 
-word_list = ["aardvark", "baboon", "camel"]
 chosen_word = choice(word_list)
 display = ["_" for char in chosen_word]
 lives = 6

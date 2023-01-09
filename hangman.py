@@ -63,10 +63,18 @@ lives = 6
 
 while "_" in display:
     guess = input("Choose a letter: ").lower()
+    if guess not in chosen_word:
+        lives -= 1
+        print(stages[lives])
+        print(display)
+        if lives == 0:
+            print("GAME OVER")
+            break
+        continue
     for i in range(len(chosen_word)):
         if chosen_word[i] == guess:
             display[i] = guess
+    print(stages[lives])
     print(display)
     if not "_" in display:
-        solution = ''.join([char for char in display])
-        print("You won") if solution == chosen_word else print("You lost")
+        print("YOU WON")

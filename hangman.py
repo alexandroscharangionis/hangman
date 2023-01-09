@@ -11,9 +11,11 @@ print(hangman_logo)
 while "_" in display:
     guess = input("Choose a letter: ").lower()
     if guess not in chosen_word:
+        print(
+            f"You guessed {guess}, that's not in the secret word. You lose a life.")
         lives -= 1
-        print(stages[lives])
         print(display)
+        print(stages[lives])
         if lives == 0:
             print("GAME OVER")
             break

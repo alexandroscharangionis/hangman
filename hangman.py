@@ -20,6 +20,12 @@ while "_" in display:
             print("GAME OVER")
             break
         continue
+
+    if guess in display:
+        print(f"You've already guessed {guess}.")
+        print(display)
+        continue
+
     for i in range(len(chosen_word)):
         if chosen_word[i] == guess:
             display[i] = guess
